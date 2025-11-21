@@ -1,63 +1,122 @@
-💬 GenAI Network Support Assistant — Web UI
-Next.js • Modern Chat UI • Cloud-Connected AI Assistant
-This is the frontend interface for the AI-powered multi-agent technical support assistant.
-Users can chat with an intelligent agent that provides router/network troubleshooting steps using RAG and multi-agent reasoning.
-👉 LIVE DEMO:
-<https://networksupportagent.vercel.app/>
-(This is what you will put in your portfolio.)
-✨ Features
-🔹 Clean Modern Chat UI
-Smooth input interaction
-Auto-scroll
-Chat bubbles (user + assistant)
-Avatars
-Typing animation (like ChatGPT)
-"New Chat" button
-Fully responsive
-🔹 Connected to Cloud Backend
+# 💬 GenAI Support Assistant — Web UI
+
+### Next.js • React • Modern Chat Interface
+
+This is the frontend UI for the **AI-powered multi-agent technical support assistant**.  
+Users can ask questions about router or network issues and get RAG-enhanced troubleshooting steps.
+
+👉 **Live Demo:** https://networksupportagent.vercel.app/
+
+---
+
+## ✨ Features
+
+### 🔹 Clean Chat Interface
+
+- User/Assistant chat bubbles
+- Avatars
+- Auto-scroll
+- Smooth input field
+- Typing indicator
+- “New Chat” / Clear Chat button
+
+### 🔹 Markdown Support
+
+Assistant messages render:
+
+- lists
+- bold/italic
+- headings
+- code blocks
+
+Using `react-markdown`.
+
+### 🔹 Connected to Backend API
+
 Uses:
+
+```
 https://genai-multi-agent-support.onrender.com/support
-to fetch multi-agent AI responses.
-🔹 Markdown Rendering
-Assistant messages support:
-bullet points
-bold/italic
-headings
-code blocks
-⚡ Instant Real-Time Replies
-📁 Project Structure
+```
+
+To fetch intelligent responses.
+
+---
+
+## 📁 Project Structure
+
+```
 app/
-┣ page.tsx
-┣ styles.module.css
+  page.tsx
+  styles.module.css
 components/
-┗ ClientOnly.tsx (if used)
+  ClientOnly.tsx (optional)
 public/
-🛠️ Setup & Installation
-1️⃣ Clone repo
-git clone https://github.com/<your-username>/genai-support-ui
-cd genai-support-ui
-2️⃣ Install dependencies
+```
+
+---
+
+## 🛠️ Setup & Run
+
+Install dependencies:
+
+```bash
 npm install
-3️⃣ Run locally
+```
+
+Run development server:
+
+```bash
 npm run dev
+```
+
 Open:
+
 👉 http://localhost:3000
-🔗 API Endpoint
-Configure API URL in page.tsx:
-fetch("https://genai-multi-agent-support.onrender.com/support", ...)
-Or use environment variable:
+
+---
+
+## 🔗 API Integration
+
+Inside `page.tsx` update the endpoint:
+
+```ts
+fetch("https://genai-multi-agent-support.onrender.com/support", {
+  method: "POST",
+  ...
+});
+```
+
+(Optional) Use environment variables:
+
+```
 NEXT_PUBLIC_API_URL=https://genai-multi-agent-support.onrender.com
-☁️ Deploy on Vercel
-Push to GitHub
-Go to https://vercel.com
-“New Project” → Import repo
-Add environment variables (if used)
-Deploy
-Your final public URL will look like:
+```
+
+---
+
+## ☁️ Deployment (Vercel)
+
+1. Push repo to GitHub
+2. Go to Vercel → New Project
+3. Import repository
+4. Configure environment variables (if used)
+5. Deploy
+
+Your URL will look like:
+
+```
 https://genai-support-ui.vercel.app
-🧰 Technologies Used
-Next.js (App Router)
-React
-CSS Modules
-React Markdown
-Vercel Deployment
+```
+
+---
+
+## 🧰 Technologies
+
+- Next.js (App Router)
+- React
+- CSS Modules
+- React Markdown
+- Vercel Deployment
+
+---
