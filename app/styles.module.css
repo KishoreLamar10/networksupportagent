@@ -9,10 +9,10 @@
 
 .chatWrapper {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
@@ -75,9 +75,8 @@
   border: 1px solid #aaa;
   outline: none;
   font-size: 16px;
-  color: #000;         
+  color: #000;
 }
-
 
 .input:focus {
   border-color: #1e40af;
@@ -95,4 +94,77 @@
 
 .sendButton:hover {
   background: #1e3a8a;
+}
+
+/* Message row */
+.messageRow {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+/* Avatars */
+.userAvatar,
+.assistantAvatar {
+  width: 38px;
+  height: 38px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Typing dots animation */
+.typingDots {
+  display: flex;
+  gap: 4px;
+}
+
+.typingDots span {
+  width: 6px;
+  height: 6px;
+  background: #666;
+  border-radius: 50%;
+  animation: typing 1.2s infinite ease-in-out;
+}
+
+.typingDots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingDots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+.newChatButton {
+  float: right;
+  background: white;
+  color: #1e40af;
+  border: 1px solid #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.newChatButton:hover {
+  background: #dce6ff;
+  border-color: #dce6ff;
 }

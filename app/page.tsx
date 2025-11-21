@@ -25,11 +25,14 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://genai-multi-agent-support.onrender.com/support", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: userText }),
-      });
+      const res = await fetch(
+        "https://genai-multi-agent-support.onrender.com/support",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: userText }),
+        }
+      );
 
       const data = await res.json();
       setMessages((prev) => [
@@ -46,10 +49,19 @@ export default function Home() {
     setLoading(false);
   }
 
+  function clearChat() {
+    setMessages([]);
+  }
+
   return (
     <main className={styles.container}>
       <div className={styles.chatWrapper}>
-        <div className={styles.header}>🛠 GenAI Support Assistant</div>
+        <div className={styles.header}>
+          🛠 GenAI Support Assistant
+          <button className={styles.newChatButton} onClick={clearChat}>
+            New Chat
+          </button>
+        </div>
 
         <div className={styles.chatBox}>
           {messages.map((msg, i) => (
